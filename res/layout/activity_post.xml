@@ -1,0 +1,102 @@
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+    
+    <com.rockerhieu.emojicon.EmojiconEditText
+        android:id="@+id/editPanel"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#f0fff0"
+        android:gravity="top"
+        android:hint="@string/hint"
+        android:text="@string/i_love_emojicon"
+        emojicon:emojiconSize="28sp" >
+         <requestFocus/>
+    </com.rockerhieu.emojicon.EmojiconEditText>
+    <ImageButton
+        android:id="@+id/btPost"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="postText"
+        android:src="@drawable/ic_launcher" />
+ 	<fragment
+            android:id="@+id/emojicons"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            class="com.rockerhieu.emojicon.EmojiconsFragment"/>
+    
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp" >
+
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <org.lucasr.twowayview.TwoWayView
+                        android:id="@+id/tvvEmoji"
+                        style="@style/TwoWayView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawSelectorOnTop="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <org.lucasr.twowayview.TwoWayView
+                        android:id="@+id/tvvBg"
+                        style="@style/TwoWayView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawSelectorOnTop="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <org.lucasr.twowayview.TwoWayView
+                        android:id="@+id/tvvFont"
+                        style="@style/TwoWayView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawSelectorOnTop="false" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-4dp"
+                android:layout_weight="0" >
+            </TabWidget>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

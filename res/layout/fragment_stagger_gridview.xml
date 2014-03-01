@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- <com.origamilabs.library.views.StaggeredGridView
+        android:id="@+id/sgvDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        staggered:drawSelectorOnTop="true"
+        staggered:numColumns="2" >
+
+    </com.origamilabs.library.views.StaggeredGridView>-->
+
+    <com.codepath.apps.tumblrsnap.view.StaggeredGridView
+        android:id="@+id/sgvDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.codepath.apps.tumblrsnap.view.StaggeredGridView>
+
+</LinearLayout>
